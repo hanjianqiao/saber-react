@@ -134,11 +134,20 @@ class ShowScreen extends React.Component {
   }
 }
 
-export const SimpleApp = StackNavigator({
+export const SimpleApp = StackNavigator(
+{
   Home: { screen: HomeScreen },
   Chat: { screen: ChatScreen },
   Show: { screen: ShowScreen },
-});
+},
+{
+  headerMode: 'screen',
+  mode: 'modal',
+  navigationOptions: {
+  gesturesEnabled: false,
+  }
+}
+);
 
 export default class App extends React.Component {
   render() {
