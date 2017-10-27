@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { Alert, StyleSheet, Text, View, Button, WebView } from 'react-native';
+import { Alert, StyleSheet, Text, View, Button, WebView, BackHandler, NativeModules } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 
@@ -38,6 +38,10 @@ class HomeScreen extends React.Component {
         <Button
           onPress={() => navigate('Chat')}
           title="Chat with Lucy"
+        />
+        <Button
+          onPress={() => NativeModules.BackManager.popLastViewController()}
+          title="Exit chat"
         />
       </View>
     );
