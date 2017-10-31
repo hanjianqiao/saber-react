@@ -137,6 +137,7 @@ class ShowScreen extends React.Component {
     );
   }
 }
+import { HeaderBackButton } from 'react-navigation';
 
 export const SimpleApp = StackNavigator(
 {
@@ -147,9 +148,10 @@ export const SimpleApp = StackNavigator(
 {
   headerMode: 'screen',
   mode: 'modal',
-  navigationOptions: {
-  gesturesEnabled: false,
-  }
+  navigationOptions: ({navigation}) => ({
+    gesturesEnabled: false,
+    headerLeft: <HeaderBackButton onPress={() => navigation.goBack()} />,
+  }),
 }
 );
 
