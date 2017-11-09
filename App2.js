@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
 class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
+    gesturesEnabled: false,
+    headerLeft: <HeaderBackButton onPress={() => NativeModules.BackManager.popLastViewController()} />,
   };
   render() {
     const { navigate } = this.props.navigation;
